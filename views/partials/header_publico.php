@@ -14,7 +14,7 @@
     <div class="container">
         <a class="navbar-brand" href="/index.php"><?= e(APP_NOME) ?></a>
         <div>
-            <a href="/auth/login.php" class="btn btn-outline-carlores btn-sm me-2">Entrar</a>
+            <a href="/auth/login.php" class="btn btn-outline-light btn-sm me-2">Entrar</a>
             <a href="/auth/cadastro.php" class="btn btn-carlores btn-sm">Cadastre-se</a>
         </div>
     </div>
