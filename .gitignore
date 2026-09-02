@@ -1,0 +1,15 @@
+# Uploads enviados via aplicação (fotos de salões cadastradas em tempo de execução)
+public/assets/uploads/*
+!public/assets/uploads/.gitkeep
+
+# Sistema operacional / editores
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
+
+# Ambiente local
+.env
+
+# Diretorio interno de sessao do Claude Code (nao faz parte do projeto)
+.claude/

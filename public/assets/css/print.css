@@ -1,0 +1,42 @@
+/* Estilos usados apenas na visualizacao de impressao dos relatorios ("Salvar como PDF" do navegador). */
+
+.print-only {
+    display: none;
+}
+
+@media print {
+    nav, .sidebar-carlores, .no-print, footer.rodape-carlores {
+        display: none !important;
+    }
+
+    .print-only {
+        display: block !important;
+    }
+
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    main {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+    }
+
+    table {
+        width: 100%;
+        font-size: 12px;
+        border-collapse: collapse;
+    }
+
+    table th, table td {
+        border: 1px solid #999 !important;
+        padding: 4px 6px !important;
+    }
+
+    .card-carlores {
+        box-shadow: none !important;
+        border: 1px solid #999 !important;
+    }
+}
