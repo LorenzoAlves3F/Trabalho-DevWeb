@@ -1,15 +1,14 @@
 :root {
-    --carlores-preto: #1c1712;
-    --carlores-vinho: #6d1b3c;
-    --carlores-vinho-escuro: #4a1229;
-    --carlores-dourado: #c9a227;
-    --carlores-dourado-claro: #e8d38a;
-    --carlores-creme: #faf6ef;
-    --carlores-texto: #2b2620;
+    --carlores-verde: #006039;
+    --carlores-verde-escuro: #00492b;
+    --carlores-dourado: #A37E2C;
+    --carlores-dourado-claro: #c49a4a;
+    --carlores-branco: #ffffff;
+    --carlores-texto: #1f1f1f;
 }
 
 body {
-    background-color: var(--carlores-creme);
+    background-color: var(--carlores-branco);
     color: var(--carlores-texto);
     font-family: 'Poppins', 'Segoe UI', sans-serif;
 }
@@ -19,16 +18,16 @@ h1, h2, h3, h4, h5, .brand-font {
 }
 
 a {
-    color: var(--carlores-vinho);
+    color: var(--carlores-verde);
 }
 a:hover {
-    color: var(--carlores-vinho-escuro);
+    color: var(--carlores-verde-escuro);
 }
 
 /* ---------- Navbar ---------- */
 .navbar-carlores {
-    background: linear-gradient(135deg, var(--carlores-preto) 0%, var(--carlores-vinho-escuro) 100%);
-    border-bottom: 2px solid var(--carlores-dourado);
+    background-color: var(--carlores-verde);
+    border-bottom: 3px solid var(--carlores-dourado);
 }
 .navbar-carlores .navbar-brand {
     font-family: 'Playfair Display', serif;
@@ -37,7 +36,7 @@ a:hover {
     letter-spacing: 0.5px;
 }
 .navbar-carlores .nav-link {
-    color: #f1e9d8 !important;
+    color: #ffffff !important;
 }
 .navbar-carlores .nav-link:hover,
 .navbar-carlores .nav-link.active {
@@ -46,33 +45,33 @@ a:hover {
 
 /* ---------- Botoes ---------- */
 .btn-carlores {
-    background-color: var(--carlores-vinho);
-    border-color: var(--carlores-vinho);
+    background-color: var(--carlores-verde);
+    border-color: var(--carlores-verde);
     color: #fff;
 }
 .btn-carlores:hover {
-    background-color: var(--carlores-vinho-escuro);
-    border-color: var(--carlores-vinho-escuro);
+    background-color: var(--carlores-verde-escuro);
+    border-color: var(--carlores-verde-escuro);
     color: #fff;
 }
 .btn-outline-carlores {
     border-color: var(--carlores-dourado);
-    color: var(--carlores-vinho-escuro);
+    color: var(--carlores-verde);
 }
 .btn-outline-carlores:hover {
     background-color: var(--carlores-dourado);
-    color: var(--carlores-preto);
+    color: #fff;
 }
 
 /* ---------- Cards ---------- */
 .card-carlores {
-    border: 1px solid rgba(201, 162, 39, 0.35);
+    border: 1px solid rgba(163, 126, 44, 0.35);
     border-radius: 0.6rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
 .card-carlores .card-header {
-    background-color: var(--carlores-preto);
-    color: var(--carlores-dourado-claro);
+    background-color: var(--carlores-verde);
+    color: var(--carlores-branco);
     border-bottom: 2px solid var(--carlores-dourado);
     font-family: 'Playfair Display', serif;
     border-radius: 0.6rem 0.6rem 0 0 !important;
@@ -81,10 +80,11 @@ a:hover {
 /* ---------- Paginas de autenticacao ---------- */
 .auth-wrapper {
     min-height: 100vh;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(circle at top, var(--carlores-vinho-escuro), var(--carlores-preto));
+    background-color: var(--carlores-verde);
     padding: 2rem 1rem;
 }
 .auth-card {
@@ -93,23 +93,28 @@ a:hover {
     background: #fff;
     border-radius: 0.75rem;
     padding: 2.5rem;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
     border-top: 4px solid var(--carlores-dourado);
 }
 .auth-card .brand-font {
-    color: var(--carlores-vinho-escuro);
+    color: var(--carlores-verde);
 }
 
 /* ---------- Landing ---------- */
 .hero-carlores {
-    background: linear-gradient(135deg, var(--carlores-preto) 0%, var(--carlores-vinho-escuro) 60%, var(--carlores-vinho) 100%);
-    color: #f8f3e8;
-    padding: 5rem 1rem;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--carlores-verde);
+    color: #ffffff;
+    padding: 3rem 1rem;
 }
 .hero-carlores .btn-dourado {
     background-color: var(--carlores-dourado);
     border-color: var(--carlores-dourado);
-    color: var(--carlores-preto);
+    color: #ffffff;
     font-weight: 600;
 }
 .hero-carlores .btn-dourado:hover {
@@ -131,7 +136,7 @@ a:hover {
 /* ---------- Sidebar ---------- */
 .sidebar-carlores {
     background-color: #fff;
-    border-right: 1px solid rgba(201, 162, 39, 0.35);
+    border-right: 1px solid rgba(163, 126, 44, 0.35);
     min-height: calc(100vh - 56px);
     padding-top: 1rem;
 }
@@ -141,10 +146,10 @@ a:hover {
     margin-bottom: 0.2rem;
 }
 .sidebar-carlores .nav-link:hover {
-    background-color: rgba(201, 162, 39, 0.12);
+    background-color: rgba(163, 126, 44, 0.12);
 }
 .sidebar-carlores .nav-link.active {
-    background-color: var(--carlores-vinho);
+    background-color: var(--carlores-verde);
     color: #fff;
 }
 
@@ -153,8 +158,8 @@ a:hover {
 }
 
 footer.rodape-carlores {
-    background-color: var(--carlores-preto);
-    color: #cbbfa8;
+    background-color: var(--carlores-verde);
+    color: #ffffff;
     padding: 1.25rem 0;
     margin-top: 3rem;
 }
