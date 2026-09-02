@@ -9,7 +9,6 @@ if (estaLogado()) {
     exit;
 }
 
-$tituloPagina = APP_NOME;
 require ROOT_PATH . '/views/partials/header_publico.php';
 ?>
 <section class="hero-carlores text-center">

@@ -58,7 +58,9 @@ class Validator
             'data_futura_ou_hoje' => ((string)$valor >= date('Y-m-d')) ? null : 'A data não pode ser no passado.',
             'data_nao_futura'     => ((string)$valor <= date('Y-m-d')) ? null : 'A data não pode ser no futuro.',
             'in'          => in_array($valor, explode(',', (string)$parametro), true) ? null : 'Selecione uma opção válida.',
-            'confirmado'  => ($valor === ($dados[$campo . '_confirmacao'] ?? null)) ? null : 'Os valores não conferem.',
+            // Regra aplicada ao proprio campo "*_confirmacao" (ex: senha_confirmacao) -
+            // compara com o campo base, removendo o sufixo (ex: senha).
+            'confirmado'  => ($valor === ($dados[preg_replace('/_confirmacao$/', '', $campo)] ?? null)) ? null : 'Os valores não conferem.',
             'senha_forte' => preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/', (string)$valor) ? null
                              : 'A senha deve ter no mínimo 8 caracteres, com letras maiúsculas, minúsculas e números.',
             'cpf'         => self::validarCPF((string)$valor) ? null : 'CPF inválido.',

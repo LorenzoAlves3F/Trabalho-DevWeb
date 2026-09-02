@@ -111,7 +111,19 @@ class AuthService
     public static function validarToken(string $tokenReal): ?array
     {
         $tokenHash = hash('sha256', $tokenReal);
-        return PasswordReset::buscarValidoPorTokenHash($tokenHash);
+        $registro = PasswordReset::buscarPorTokenHash($tokenHash);
+
+        if (!$registro || (int)$registro['usado'] === 1) {
+            return null;
+        }
+
+        // Comparado em PHP (nao via "expira_em > NOW()" no SQL) para nao depender do relogio/timezone
+        // do servidor MySQL bater com o do PHP - expira_em foi gravado com date() do PHP.
+        if (strtotime($registro['expira_em']) < time()) {
+            return null;
+        }
+
+        return $registro;
     }
 
     public static function redefinirSenha(string $tokenReal, string $novaSenha): bool

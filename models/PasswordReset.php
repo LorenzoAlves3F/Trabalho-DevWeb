@@ -20,11 +20,14 @@ class PasswordReset
         $stmt->execute([':usuario_id' => $usuarioId, ':token' => $tokenHash, ':expira_em' => $expiraEm]);
     }
 
-    public static function buscarValidoPorTokenHash(string $tokenHash): ?array
+    /**
+     * Busca só pelo token (sem checar usado/expiracao aqui): essa checagem fica por conta do PHP
+     * (AuthService::validarToken), para nao depender do relogio/timezone do servidor MySQL bater
+     * com o do PHP (expira_em foi gravado usando date() do PHP, nao NOW() do MySQL).
+     */
+    public static function buscarPorTokenHash(string $tokenHash): ?array
     {
-        $stmt = Database::conectar()->prepare(
-            'SELECT * FROM password_resets WHERE token = :token AND usado = 0 AND expira_em > NOW()'
-        );
+        $stmt = Database::conectar()->prepare('SELECT * FROM password_resets WHERE token = :token');
         $stmt->execute([':token' => $tokenHash]);
         $registro = $stmt->fetch();
         return $registro ?: null;
